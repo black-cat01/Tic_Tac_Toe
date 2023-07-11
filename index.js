@@ -33,7 +33,7 @@ $(".item").on({
             var status = document.querySelector("#" + div_id).classList;
             // console.log(status[1]);
             if (status[1] === "occupied") {
-                $("h1.level").text(`Player ${ch[pl]} choose any empty box`);
+                $("h1.level").text(`${ch[pl]} choose any empty box`);
             } else {
                 unOccupied(div_id);
             }
@@ -85,12 +85,12 @@ function unOccupied(div_id) {
     console.log("Status win or lose:", win);
 
     if (win) {
-        $("h1.level").text(`Player ${ch[pl]} has Won. Press Ctrl key to restart.`);
+        $("h1.level").text(`${ch[pl]} Won. Press Ctrl key or Reset Button to restart.`);
         start = false;
     } else {
         pl = (pl === 1) ? 0 : 1;
         if (freeBoxes === 0) {
-            $("h1.level").text(`Game Draw. Press Ctrl key to restart game.`);
+            $("h1.level").text(`Draw! Press Ctrl key or Reset Button to restart.`);
             start = false;
         } else {
             turn();
@@ -136,5 +136,5 @@ function playSound(player) {
 }
 
 function turn() {
-    $("h1.level").text(`Player ${ch[pl]}'s turn`);
+    $("h1.level").text(`${ch[pl]}'s turn`);
 }
